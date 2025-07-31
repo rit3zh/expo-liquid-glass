@@ -1,6 +1,6 @@
 {
   "name": "expo-liquid-glass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": " 🚀 Native liquid glass 🧊 views for Expo. Powered by SwiftUI + expo-modules-core ",
   "main": "build/index.js",
   "types": "build/index.d.ts",
