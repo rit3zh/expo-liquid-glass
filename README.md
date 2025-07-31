@@ -58,10 +58,10 @@ import { ExpoLiquidGlassView } from "expo-liquid-glass-view";
 export default function App() {
   return (
     <ExpoLiquidGlassView
-      type="regular"
-      tint="systemMaterial"
+      cornerStyle={CornerStyle.Circular}
+      type={LiquidGlassType.Tint}
+      tint="#000000"
       cornerRadius={24}
-      cornerStyle="continuous"
       style={{ width: 200, height: 200, alignSelf: "center", marginTop: 100 }}
     >
       <Text style={{ color: "#fff", textAlign: "center" }}>
