@@ -9,9 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/ui": "0.1.1-alpha.10",
+    "@expo/vector-icons": "^14.1.0",
     "expo": "~53.0.20",
+    "expo-linear-gradient": "^14.1.5",
+    "expo-symbols": "^0.4.5",
     "react": "19.0.0",
-    "react-native": "0.79.5"
+    "react-native": "0.79.5",
+    "react-native-animated-pagination-dots": "^0.1.73",
+    "react-native-video": "^6.16.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

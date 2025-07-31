@@ -1,38 +1,80 @@
 import ExpoModulesCore
-import WebKit
+import SwiftUI
 
-// This view will be used as a native component. Make sure to inherit from `ExpoView`
-// to apply the proper styling (e.g. border radius and shadows).
-class ExpoLiquidGlassView: ExpoView {
-  let webView = WKWebView()
-  let onLoad = EventDispatcher()
-  var delegate: WebViewDelegate?
+class ExpoLiquidGlassViewProps: ExpoSwiftUI.ViewProps {
+    @Field var cornerRadius: CGFloat = 5
+    @Field var type: String
+    @Field var cornerStyle: String
+    @Field var tint: String
+}
 
-  required init(appContext: AppContext? = nil) {
-    super.init(appContext: appContext)
-    clipsToBounds = true
-    delegate = WebViewDelegate { url in
-      self.onLoad(["url": url])
+struct ExpoLiquidGlassView: ExpoSwiftUI.View, ExpoSwiftUI.WithHostingView {
+  let props: ExpoLiquidGlassViewProps
+  
+    var body: some View {
+        if #available(iOS 26.0, *) {
+            Children().glassEffect(getGlassEffect(from: props.type,color: props.tint),in: .rect(cornerRadius: props.cornerRadius,style: getCornerRadiusStyle(from: props.cornerStyle)))
+        
+        } else  {
+            Children()
+        }
     }
-    webView.navigationDelegate = delegate
-    addSubview(webView)
+}
+
+private func getCornerRadiusStyle(from style: String) -> RoundedCornerStyle {
+    switch style.lowercased() {
+    case "continuous":
+      return .continuous
+    case "circular":
+      return .circular
+    default:
+      return .continuous // Default fallback
+    }
   }
 
-  override func layoutSubviews() {
-    webView.frame = bounds
+
+@available(iOS 26.0, *)
+private func getGlassEffect(from type: String, color: String) -> Glass {
+  switch type.lowercased() {
+  case "clear":
+      return .clear
+  case "identity":
+      return .identity
+  case "regular":
+      return .regular
+  case "interactive":
+      return .regular.interactive()
+  case "tint":
+      return .regular.tint(Color(hex: color))
+  default:
+    return .clear
   }
 }
 
-class WebViewDelegate: NSObject, WKNavigationDelegate {
-  let onUrlChange: (String) -> Void
 
-  init(onUrlChange: @escaping (String) -> Void) {
-    self.onUrlChange = onUrlChange
-  }
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3:
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6:
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8:
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (1, 1, 1, 0)
+        }
 
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation) {
-    if let url = webView.url {
-      onUrlChange(url.absoluteString)
+        self.init(
+            .sRGB,
+            red: Double(r) / 255,
+            green: Double(g) / 255,
+            blue:  Double(b) / 255,
+            opacity: Double(a) / 255
+        )
     }
-  }
 }
