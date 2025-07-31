@@ -142,14 +142,8 @@ If you're building glassmorphic UIs, try pairing this with:
 
 ## ❤️ Contributing
 
-PRs and issues are welcome! Let’s keep building beautiful native UIs with React Native + SwiftUI!
-
----
+## PRs and issues are welcome! Let’s keep building beautiful native UIs with React Native + SwiftUI!
 
 ## 📄 License
 
 MIT © [rit3zh](https://github.com/rit3zh)
-
----
-
-Let me know if you'd like to add example GIFs, inline code comments, or a playground Expo Snack for demo.
