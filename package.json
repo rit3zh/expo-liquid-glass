@@ -21,13 +21,13 @@
     "expo-liquid-glass",
     "ExpoLiquidGlass"
   ],
-  "repository": "https://github.com/rit3zh/expo-liquid-glass",
+  "repository": "https://github.com/rit3zh/expo-liquid-glass-view",
   "bugs": {
-    "url": "https://github.com/rit3zh/expo-liquid-glass/issues"
+    "url": "https://github.com/rit3zh/expo-liquid-glass-view/issues"
   },
   "author": "Ritesh. <119659853+rit3zh@users.noreply.github.com> (https://github.com/rit3zh)",
   "license": "MIT",
-  "homepage": "https://github.com/rit3zh/expo-liquid-glass#readme",
+  "homepage": "https://github.com/rit3zh/expo-liquid-glass-view#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.0.0",
