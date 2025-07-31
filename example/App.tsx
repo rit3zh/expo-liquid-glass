@@ -14,7 +14,7 @@ import {
   CornerStyle,
   ExpoLiquidGlassView,
   LiquidGlassType,
-} from "expo-liquid-glass";
+} from "expo-liquid-glass-view";
 import { SymbolView } from "expo-symbols";
 import {
   Ionicons,

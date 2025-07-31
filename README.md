@@ -2,7 +2,7 @@
   <img src="./assets/liquid-glass.jpg" alt="Expo Liquid Glass View" style="width:100%; max-width:800px;" />
 </p>
 
-<h1 align="center">🧊 expo-liquid-glass</h1>
+<h1 align="center">🧊 expo-liquid-glass-view</h1>
 
 <p align="center">
   A beautiful, SwiftUI-powered glass effect view for React Native built with Expo
@@ -25,7 +25,7 @@
 ### 1. Add the package
 
 ```bash
-npx expo install expo-liquid-glass
+npx expo install expo-liquid-glass-view
 ```
 
 ### 2. Install CocoaPods
@@ -53,7 +53,7 @@ npx expo run:ios
 ## 📦 Usage
 
 ```tsx
-import { ExpoLiquidGlassView } from "expo-liquid-glass";
+import { ExpoLiquidGlassView } from "expo-liquid-glass-view";
 
 export default function App() {
   return (

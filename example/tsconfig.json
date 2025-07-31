@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "expo-liquid-glass": ["../src/index"],
-      "expo-liquid-glass/*": ["../src/*"]
+      "expo-liquid-glass-view": ["../src/index"],
+      "expo-liquid-glass-view/*": ["../src/*"]
     }
   }
 }
