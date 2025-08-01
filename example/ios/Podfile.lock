@@ -40,7 +40,7 @@ PODS:
     - ExpoModulesCore
   - ExpoLinearGradient (14.1.5):
     - ExpoModulesCore
-  - ExpoLiquidGlass (0.1.0):
+  - ExpoLiquidGlass (0.1.5):
     - ExpoModulesCore
   - ExpoModulesCore (2.5.0):
     - DoubleConversion
@@ -2068,7 +2068,7 @@ SPEC CHECKSUMS:
   ExpoFont: cf508bc2e6b70871e05386d71cab927c8524cc8e
   ExpoKeepAwake: bf0811570c8da182bfb879169437d4de298376e7
   ExpoLinearGradient: 7734c8059972fcf691fb4330bcdf3390960a152d
-  ExpoLiquidGlass: aa44384b345ab6c46056de4d0702d881eba1cc09
+  ExpoLiquidGlass: e49cfda946789c54f97c68d7d5206bdc7efb9359
   ExpoModulesCore: 00a1b5c73248465bd0b93f59f8538c4573dac579
   ExpoSymbols: c5612a90fb9179cdaebcd19bea9d8c69e5d3b859
   ExpoUI: d67b6d76bb31c025df33e9ee68b20b031436d70e

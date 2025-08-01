@@ -140,6 +140,8 @@ If you're building glassmorphic UIs, try pairing this with:
 
 ---
 
+## 🎥 Preview
+
 ## ❤️ Contributing
 
 ###### PRs and issues are welcome! Let’s keep building beautiful native UIs with React Native + SwiftUI!
